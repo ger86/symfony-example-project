@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista de artículos{% endblock %}
+
+{% block body %}
+
+{% for article in articles %}
+  {{ include('views/article_item.html.twig') }}
+{% endfor %}
+
+{% endblock %}

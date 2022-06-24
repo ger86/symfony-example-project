@@ -1,0 +1,16 @@
+App\Entity\Article:
+    attributes:
+        id:
+            groups: ["api_response"]
+        title:
+            groups: ["api_response"]
+        body:
+            groups: ["article"]
+        createdAt:
+            groups: ["article"]
+        category:
+            groups: ["article"]
+        isPublished:
+            groups: ["article"]
+        image:
+            groups: ["article"]

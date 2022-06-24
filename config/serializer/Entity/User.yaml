@@ -1,0 +1,6 @@
+App\Entity\User:
+    attributes:        
+        id:
+            groups: ["api_response"]
+        email:
+            groups: ["api_response"]

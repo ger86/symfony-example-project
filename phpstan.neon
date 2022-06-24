@@ -1,0 +1,39 @@
+parameters:
+    phpVersion: 80100
+    level: 3
+    #bootstrapFiles:
+       # - bin/.phpunit/phpunit-9.5-0/vendor/autoload.php
+    paths:
+        - src
+    excludePaths:
+        - %rootDir%/../../../src/Migrations
+    symfony:
+        container_xml_path: 'var/cache/dev/App_KernelDevDebugContainer.xml'
+    doctrine:
+        objectManagerLoader: build/phpstan/doctrine-orm-bootstrap.php
+        repositoryClass: Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository
+    reportUnmatchedIgnoredErrors: false
+    checkMissingIterableValueType: false
+    banned_code:
+        nodes:
+            -
+                type: Stmt_Echo
+                functions: null
+            -
+                type: Expr_Eval
+                functions: null
+            -
+                type: Expr_Exit
+                functions: null
+            -
+                type: Expr_FuncCall
+                functions:
+                    - dd
+                    - debug_backtrace
+                    - dump
+                    - passthru
+                    - phpinfo
+                    - print_r
+                    - proc_open
+                    - system
+                    - var_dump
